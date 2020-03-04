@@ -5,7 +5,7 @@ using R5T.Sindia;
 using R5T.Votadinia;
 
 
-namespace R5T.Aestia
+namespace R5T.Aestia.Extensions
 {
     public static class IAnomalyRepositoryExtensions
     {
