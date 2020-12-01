@@ -14,9 +14,9 @@ namespace R5T.Aestia.Extensions
         /// </summary>
         public static async Task<AnomalyIdentity> NewSetReportedUTC(this IAnomalyRepository repository, ICurrentUtcDateTimeProvider currentUtcDateTimeProvider)
         {
-            var anomalyIdentity = await repository.New();
-
             var nowUTC = currentUtcDateTimeProvider.GetCurrentUtcDateTime();
+
+            var anomalyIdentity = await repository.New(nowUTC);
 
             await repository.SetReportedUTC(anomalyIdentity, nowUTC);
 
